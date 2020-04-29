@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html  lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Tarea 3 PNC</title>
+</head>
+
+<body>
+
+	<h1>Alumno no ingresado, existen errores</h1>
+
+	<form method="post" th:action="@{/validado}" th:object="${usuario}">
+		<ul th:if="${#fields.hasErrors('*')}">
+			<li th:each="err: ${#fields.errors('*')}"
+			th:text="${err}" h:class="error">
+				El dato ingresado es incorrecto.
+			</li>
+		</ul>
+	</form>
+	
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html  lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Tarea 3 PNC</title>
+</head>
+
+<body>
+
+	<h1>Ingreso nuevo alumno</h1>
+	
+	<form method="post" th:action="@{/validado}" th:object="${usuario}">
+	
+		<label for="nombres">Nombres: </label>
+		<input type="text" name="nombres" th:field="*{nombres}">
+		<br>
+		<label for="apellidos">Apellidos: </label>
+		<input type="text" name="apellidos" th:field="*{apellidos}">
+		<br>
+		<label for="fechaN">Fecha de Nacimiento: </label>
+		<input type="text" name="fechaN" th:field="*{fechaN}">
+		<br>
+		<label for="lugarN">Lugar de Nacimiento: </label>
+		<input type="text" name="lugarN" th:field="*{lugarN}">
+		<br>
+		<label for="colegio">Instituto o Colegio de procedencia: </label>
+		<input type="text" name="colegio" th:field="*{colegio}">
+		<br>
+		<label for="telF">Telefono fijo: </label>
+		<input type="text" name="telF" th:field="*{telF}">
+		<br>
+		<label for="telM">Telefono movil: </label>
+		<input type="text" name="telM" th:field="*{telM}">
+		<br>
+		<input type="submit" value="Guardar alumno">
+		
+	</form>
+	
+</body>
+</html>
